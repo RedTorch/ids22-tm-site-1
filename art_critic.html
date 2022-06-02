@@ -47,6 +47,12 @@
             const URL = "https://teachablemachine.withgoogle.com/models/UdCGOfjOG/";
 
             let model, webcam, labelContainer, maxPredictions;
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        // for (let i = 0; i < maxPredictions; i++) { // and class labels
+        //     labelContainer.appendChild(document.createElement("div"));
+        // }
 
             // Load the image model and setup the webcam
             async function init() {
@@ -85,10 +91,27 @@
             async function predict() {
                 // predict can take in an image, video or canvas html element
                 const prediction = await model.predict(webcam.canvas);
-                for (let i = 0; i < maxPredictions; i++) {
-                    const classPrediction =
-                        prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                    labelContainer.childNodes[i].innerHTML = classPrediction;
+                // for (let i = 0; i < maxPredictions; i++) {
+                //     const classPrediction =
+                //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                //     labelContainer.childNodes[i].innerHTML = classPrediction;
+                // }
+                if(prediction[2].probability>0.5)
+                {
+                    console.log("blank");
+                    labelContainer.innerHTML = "no art detected";
+                    
+                }
+                else{
+                var value = prediction[0].probability/(prediction[0].probability+prediction[1].probability);
+                console.log(prediction[0].probability/(prediction[0].probability+prediction[1].probability));
+                var letterGrade = "";
+                if(value>.9){letterGrade="A";}
+                else if(value>.8){letterGrade="B";}
+                else if(value>.7){letterGrade="C";}
+                else if(value>.6){letterGrade="D";}
+                else{letterGrade="F";}
+                labelContainer.innerHTML = letterGrade;
                 }
             }
         </script>

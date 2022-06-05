@@ -1,171 +1,208 @@
 <!-- updated recently -->
 <!DOCTYPE html>
 <html lang="en">
-    <body bgcolor="#fffff0">
-        <h1 class="title"> Art Institute of Chicago - Online Learning System </h1>
-        <br>
-        <h2> CLASS </h2>
-<p> Introduction to Creative Works, Fall '45, with Professor P_ML_CAD09 (AI Professor)</p>
-<br>
+  <body bgcolor="#fffff0">
+    <h1 class="title">
+      Chicago Academy of Art and Design - Online Learning System
+    </h1>
+    <br />
+    <h2>CLASS</h2>
+    <p>
+      Introduction to Creative Works, Fall '45, with Professor P_ML_CAD09 (AI
+      Professor)
+    </p>
+    <br />
 
-<h2> ASSIGNMENT </h2>
-<p> Take-home Midterm Exam Part 1 </p>
-<br>
+    <h2>ASSIGNMENT</h2>
+    <p>Take-home Midterm Exam Part 1</p>
+    <br />
 
-<h2> DUE DATE </h2>
-<p> 6/3/42 at 23:59 </p>
-<br>
+    <h2>DUE DATE</h2>
+    <p>6/3/42 at 23:59</p>
+    <br />
 
-<h2> ASSIGNMENT DESCRIPTION </h2>
-<p> Produce an original work of art (preferably 2d), modeled after the examples that were discussed in class. The work must be visual (it cannot be a song or video, as these cannot be graded). Please keep the submission method in mind, and do not submit anything which cannot be captured in a single frame. </p>
-<p> This assignment will be worth 10% of your semester grade.</p>
-<br>
+    <h2>ASSIGNMENT DESCRIPTION</h2>
+    <p>
+      Produce an original work of art (preferably 2d), modeled after the
+      examples that were discussed in class. The work must be visual (it cannot
+      be a song or video, as these cannot be graded). Please keep the submission
+      method in mind, and do not submit anything which cannot be captured in a
+      single frame.
+    </p>
+    <p>This assignment will be worth 10% of your semester grade.</p>
+    <br />
 
-<h2>HOW TO SUBMIT</h2>
-<p> Please hold your assignment up to the forward-facing camera and verify the image. When you are satisfied with your submission, press "submit" to submit it for grading. Your work will be graded immediately using an algorithm  trained on over 1,000 works of art from all artists and periods. Your percentage match will be used to assign a letter grade. If no submission is detected, your work cannot be graded and will be given a "0". It is recommended to take the submission photo in a well-lit area and use a high-definition camera for best results. There are no resubmissions after grading, and grades cannot be appealed for this assignment, so please be careful. </p>
-<br>
+    <h2>HOW TO SUBMIT</h2>
+    <p>
+      Please hold your assignment up to the forward-facing camera and verify the
+      image. When you are satisfied with your submission, press "submit" to
+      submit it for grading. Your work will be graded immediately using an
+      algorithm trained on over 3,000 works of art from all artists and periods.
+      Your percentage match will be used to assign a letter grade. If no
+      submission is detected, your work cannot be graded and will be given a
+      "0". It is recommended to take the submission photo in a well-lit area and
+      use a high-definition camera for best results. There are no resubmissions
+      after grading, and grades cannot be appealed for this assignment, so
+      please be careful.
+    </p>
+    <br />
 
-<h2> PROFESSOR CONTACT INFORMATION </h2>
-<p> This class is taught by an AI developed through machine learning. If you encounter unusual behaviors or issues interacting with the professor, such as nonsense text or arbitrary grading, please submit a ticket with the campus IT services help desk under the category "AI-related issues". We will get back to you within 2 business days. </p>
-<br>
+    <h2>PROFESSOR CONTACT INFORMATION</h2>
+    <p>
+      This class is taught by an AI developed through machine learning. If you
+      encounter unusual behaviors or issues interacting with the professor, such
+      as nonsense text or arbitrary grading, please submit a ticket with the
+      campus IT services help desk under the category "AI-related issues". We
+      will get back to you within 2 business days.
+    </p>
+    <br />
 
-<p>This tool is brought to you by MastersML. MastersML is an academic AI service which solves the problem of teacher and institutional errors by providing fair and unbiased algorithmic grading for a variety of subjects. Please visit us at mastersml.watson.com for more information or to request a quote. </p>
-<br>
-<br>
-<br>
-        <div class="artcritic">
-            <div class="webcam">
-                <button type="button" onclick="init()">Start</button>
-                <button type="button" onclick="capture()">Capture</button>
-                <div id="webcam-container"></div>
-                <div id="label-container"></div>
-            </div>
+    <p>
+      This tool is brought to you by MastersML. MastersML is an academic AI
+      service which solves the problem of teacher and institutional errors by
+      providing fair and unbiased algorithmic grading for a variety of subjects.
+      Please visit us at mastersml.watson.com for more information or to request
+      a quote.
+    </p>
+    <br />
+    <br />
+    <br />
+    <div class="artcritic">
+      <div class="webcam">
+        <button type="button" onclick="init()">Start</button>
+        <button type="button" onclick="capture()">Capture</button>
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
+      </div>
 
-            <div class="grade">
-                <div class="result">
-                    <h3>Result</h3>
-                    <div class="show">
-                        <p>Percentage:<span id="percentage"></span></h2>
-                        <br>
-                        <p>Grade:<span id="grade"></span></h2>
-                    </div>
-                </div>
-            </div>
+      <div class="grade">
+        <div class="result">
+          <h3>Result</h3>
+          <div class="show">
+            <h4>Percentage: <span id="percentage"></span></h4>
+            <h4>Grade: <span id="grade"></span></h4>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <style>
-            .title{
-                font-family: Arial Black;
-            }
+    <style>
+      .title {
+        font-family: Arial Black;
+      }
 
-            .artcritic {
-                display: flex;
-            }
-            .webcam {
-                flex-grow: 1;
-            }
-            .grade {
-                flex-grow: 1;
-            }
-        </style>
+      .artcritic {
+        display: flex;
+      }
+      .webcam {
+        flex-grow: 1;
+      }
+      .grade {
+        flex-grow: 1;
+      }
+    </style>
 
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-        <script type="text/javascript">
-        var notcapture = true;
-            // More API functions here:
-            // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+      var notcapture = true;
+      // More API functions here:
+      // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
-            // the link to your model provided by Teachable Machine export panel
-            const URL = "https://teachablemachine.withgoogle.com/models/UdCGOfjOG/";
+      // the link to your model provided by Teachable Machine export panel
+      const URL = "https://teachablemachine.withgoogle.com/models/UdCGOfjOG/";
 
-            let model, webcam, labelContainer, maxPredictions;
+      let model, webcam, labelContainer, maxPredictions;
+      // append elements to the DOM
+      document.getElementById("webcam-container").appendChild(webcam.canvas);
+      labelContainer = document.getElementById("label-container");
+      percent = document.getElementById("percentage");
+      grade = document.getElementById("grade");
+      // for (let i = 0; i < maxPredictions; i++) { // and class labels
+      //     labelContainer.appendChild(document.createElement("div"));
+      // }
+
+      // Load the image model and setup the webcam
+      async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
         // append elements to the DOM
         document.getElementById("webcam-container").appendChild(webcam.canvas);
         labelContainer = document.getElementById("label-container");
-        percent = document.getElementById("percentage");
-        grade = document.getElementById("grade");
-        // for (let i = 0; i < maxPredictions; i++) { // and class labels
-        //     labelContainer.appendChild(document.createElement("div"));
+        for (let i = 0; i < maxPredictions; i++) {
+          // and class labels
+          labelContainer.appendChild(document.createElement("div"));
+        }
+      }
+
+      async function loop() {
+        if (notcapture) {
+          webcam.update(); // update the webcam frame
+          await predict();
+          window.requestAnimationFrame(loop);
+        } else {
+          await predict();
+          window.requestAnimationFrame(loop);
+        }
+      }
+
+      async function capture() {
+        notcapture = !notcapture;
+        // if (notcapture) {
+        //   notcapture = false;
         // }
+      }
 
-            // Load the image model and setup the webcam
-            async function init() {
-                const modelURL = URL + "model.json";
-                const metadataURL = URL + "metadata.json";
-
-                // load the model and metadata
-                // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-                // or files from your local hard drive
-                // Note: the pose library adds "tmImage" object to your window (window.tmImage)
-                model = await tmImage.load(modelURL, metadataURL);
-                maxPredictions = model.getTotalClasses();
-
-                // Convenience function to setup a webcam
-                const flip = true; // whether to flip the webcam
-                webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
-                await webcam.setup(); // request access to the webcam
-                await webcam.play();
-                window.requestAnimationFrame(loop);
-
-                // append elements to the DOM
-                document.getElementById("webcam-container").appendChild(webcam.canvas);
-                labelContainer = document.getElementById("label-container");
-                for (let i = 0; i < maxPredictions; i++) { // and class labels
-                    labelContainer.appendChild(document.createElement("div"));
-                }
+      // run the webcam image through the image model
+      async function predict() {
+        // predict can take in an image, video or canvas html element
+        const prediction = await model.predict(webcam.canvas);
+        // for (let i = 0; i < maxPredictions; i++) {
+        //     const classPrediction =
+        //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        //     labelContainer.childNodes[i].innerHTML = classPrediction;
+        // }
+        if (!notcapture) {
+          if (prediction[2].probability > 0.5) {
+            console.log("blank");
+            percentage.innerHTML = "No submission detected";
+            grade.innerHTML = "F";
+          } else {
+            var value =
+              prediction[0].probability /
+              (prediction[0].probability + prediction[1].probability);
+            percentage.innerHTML = value.toFixed(2);
+            var letterGrade = "";
+            if (value > 0.98) {
+              letterGrade = "A";
+            } else if (value > 0.6) {
+              letterGrade = "B";
+            } else if (value > 0.3) {
+              letterGrade = "C";
+            } else if (value > 0.05) {
+              letterGrade = "D";
+            } else {
+              letterGrade = "F";
             }
-
-            async function loop() {
-              if(notcapture){
-                webcam.update(); // update the webcam frame
-                await predict();
-                window.requestAnimationFrame(loop);
-              }else{
-                await predict();
-                window.requestAnimationFrame(loop);
-              }
-            }
-
-            async function capture() {
-              //notcapture = !notcapture;
-              if(notcapture)
-              {
-                  notcapture = false;
-              }
-            }
-
-            // run the webcam image through the image model
-            async function predict() {
-                // predict can take in an image, video or canvas html element
-                const prediction = await model.predict(webcam.canvas);
-                // for (let i = 0; i < maxPredictions; i++) {
-                //     const classPrediction =
-                //         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-                //     labelContainer.childNodes[i].innerHTML = classPrediction;
-                // }
-                if(!notcapture)
-                {
-                    if(prediction[2].probability>0.5)
-                    {
-                        console.log("blank");
-                        percentage.innerHTML = "No submission detected";
-                        grade.innerHTML = "F";
-
-                    }
-                    else{
-                        var value = prediction[0].probability/(prediction[0].probability+prediction[1].probability);
-                        percentage.innerHTML = value.toFixed(2);
-                        var letterGrade = "";
-                        if(value>.98){letterGrade="A";}
-                        else if(value>.6){letterGrade="B";}
-                        else if(value>.3){letterGrade="C";}
-                        else if(value>.05){letterGrade="D";}
-                        else{letterGrade="F";}
-                        grade.innerHTML = letterGrade;
-                    }
-                }
-            }
-        </script>
-    </body>
+            grade.innerHTML = letterGrade;
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
